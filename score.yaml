@@ -4,3 +4,8 @@ metadata:
 containers:
   backend:
     image: codegameeat/go-demo
+    variables:
+      CONNECTION_STRING: jdbc:mysql://${resources.db.host}:${resources.db.port}/fi?user=${resources.db.username}&password=${resources.db.password}
+resources:
+  db:
+    type: mysql
